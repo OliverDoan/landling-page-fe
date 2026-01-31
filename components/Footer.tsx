@@ -6,7 +6,7 @@ import styles from "./style/Footer.module.css";
 
 export default function Footer() {
   return (
-    <footer className="relative w-full overflow-hidden min-h-screen flex items-end justify-center p-4">
+    <footer className={styles.footer}>
       {/* Background Image */}
       <div className="absolute inset-0 -z-10">
         <div className="relative w-full h-full">

@@ -72,7 +72,7 @@ export default function Loading({ onComplete }: LoadingProps) {
           >
             <div className="relative w-full h-full">
               <Image
-                src="/image.png"
+                src="/bg-header.png"
                 alt="Background"
                 fill
                 className="object-cover"
@@ -168,7 +168,7 @@ export default function Loading({ onComplete }: LoadingProps) {
           >
             <div className="relative h-full w-full">
               <Image
-                src="/image.png"
+                src="/bg-header.png"
                 alt="Progress"
                 fill
                 className="object-cover object-left"
