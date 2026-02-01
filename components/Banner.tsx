@@ -10,14 +10,14 @@ function Banner() {
 
     return (
         <>
-            <section className="w-full  py-16">
+            <section className="w-full pt-6">
                 <div className="container mx-auto px-6 max-w-7xl">
                     <div className="flex flex-col md:flex-row gap-12 md:gap-16">
                         {/* Left Column */}
                         <div className="flex flex-col justify-between flex-1">
                             {/* Tag "Điểm khác biệt" */}
-                            <div className={styles.topSection}>
-                                <div className={styles.topContent}>
+                            <div className={styles.topSection} >
+                                <div className={styles.topContent} style={{ alignItems: 'flex-start' }}>
                                     <div className={styles.tagContainer}>
                                         <div className={styles.tagDot}></div>
                                         <span className={styles.tagText}>{t.banner.tag}</span>
@@ -60,21 +60,21 @@ function Banner() {
                 </div>
                 <div className='flex flex-col gap-2 w-full justify-center items-center mt-6'>
 
-                    <div className={styles.topSection}>
+                    {/* <div className={styles.topSection}>
                         <div className={styles.topContent}>
                             <div className={styles.tagContainer}>
                                 <div className={styles.tagDot}></div>
                                 <span className={styles.tagText}>{t.banner.tag}</span>
                             </div>
                         </div>
-                    </div>
+                    </div> */}
                     <div className={styles.title} >
-                        {t.banner.bottomTagline.split(', ').map((part, index, array) => (
+                        {/* {t.banner.bottomTagline.split(', ').map((part, index, array) => (
                             <React.Fragment key={index}>
                                 {part}
                                 {index < array.length - 1 && <br />}
                             </React.Fragment>
-                        ))}
+                        ))} */}
                     </div>
                 </div>
 
