@@ -5,14 +5,24 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
 import { useI18n } from "@/lib/i18n";
+import { useRouter, useSearchParams } from "next/navigation";
 
 export default function Navigation() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
-  const { t } = useI18n();
+  const { locale, t } = useI18n();
+  const router = useRouter();
+  const searchParams = useSearchParams();
 
   useEffect(() => setMounted(true), []);
+
+  const toggleLang = () => {
+    const newLang = locale === "vi" ? "en" : "vi";
+    const params = new URLSearchParams(searchParams.toString());
+    params.set("lang", newLang);
+    router.push(`?${params.toString()}`);
+  };
 
   const navItems = [t.nav.about, t.nav.ecosystem, t.nav.team, t.nav.contact];
 
@@ -69,6 +79,18 @@ export default function Navigation() {
               {navItems[3]}
             </motion.a>
 
+            {/* Language Toggle */}
+            <motion.button
+              onClick={toggleLang}
+              className="rounded-lg bg-white/20 px-2.5 py-2 text-white hover:bg-white/30 transition-colors text-sm font-medium"
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.85 }}
+              aria-label="Toggle language"
+            >
+              {locale === "vi" ? "🇻🇳" : "🇬🇧"}
+            </motion.button>
+
             {/* Theme Toggle */}
             {mounted && (
               <motion.button
@@ -94,6 +116,15 @@ export default function Navigation() {
 
           {/* Mobile Menu Button + Controls */}
           <div className="lg:hidden flex items-center gap-2">
+            {/* Language Toggle Mobile */}
+            <button
+              onClick={toggleLang}
+              className="p-2 rounded-lg bg-[#8B9AD9] dark:bg-[#2D3A6E] text-white hover:opacity-80 transition-colors h-fit text-sm"
+              aria-label="Toggle language"
+            >
+              {locale === "vi" ? "🇻🇳" : "🇬🇧"}
+            </button>
+
             {/* Theme Toggle Mobile */}
             {mounted && (
               <button
