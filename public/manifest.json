@@ -1,0 +1,27 @@
+{
+  "name": "NewEra Inc. - Kiến tạo kỷ nguyên công nghệ mới",
+  "short_name": "NewEra Inc.",
+  "description": "Hệ sinh thái công nghệ toàn diện cho ngành bán lẻ",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#000000",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/logo-blue.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/logo-blue.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "technology"],
+  "lang": "vi-VN",
+  "dir": "ltr"
+}
