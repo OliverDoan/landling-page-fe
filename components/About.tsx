@@ -134,7 +134,7 @@ function About() {
         <section ref={scrollSectionRef} className={styles.scrollSection}>
             <div className={styles.stickyContainer}>
                 <div className={styles.backgroundImage}>
-                    <Image src="/bg-header.png" alt="About Background" fill className={styles.bgImage} priority unoptimized />
+                    <Image src="/bg-header.webp" alt="About Background" fill className={styles.bgImage} priority unoptimized />
                 </div>
 
                 <div className={styles.topSection}>

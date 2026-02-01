@@ -13,7 +13,7 @@ function Header() {
       {/* Background Image */}
       <div className={styles.backgroundImage}>
         <Image
-          src="/bg-header.png"
+          src="/bg-header.webp"
           alt="Header Background"
           fill
           className={styles.bgImage}

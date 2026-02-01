@@ -13,7 +13,7 @@ export default function Footer() {
       {/* Background Image */}
       <div className="absolute inset-0 -z-10">
         <div className="relative w-full h-full">
-          <Image src="/bg-footer.png" alt="Footer Background" fill className="object-cover" priority unoptimized />
+          <Image src="/bg-footer.webp" alt="Footer Background" fill className="object-cover" priority unoptimized />
         </div>
       </div>
 
