@@ -20,7 +20,7 @@ const translations = {
       subtitle1: "Kiến tạo, phát triển,",
       subtitle2: "thấu hiểu, cộng hưởng.",
       description:
-        "Hệ\u00A0sinh\u00A0thái công\u00A0nghệ toàn\u00A0diện, tích\u00A0hợp thanh\u00A0toán, trí\u00A0tuệ nhân\u00A0tạo, Internet vạn\u00A0vật và dữ\u00A0liệu.",
+        "Hệ\u00A0sinh\u00A0thái công\u00A0nghệ toàn\u00A0diện, tích\u00A0hợp thanh\u00A0toán, trí\u00A0tuệ nhân\u00A0tạo, Internet vạn\u00A0vật và dữ\u00A0liệu lớn.",
       cta: "Tìm Hiểu Thêm",
     },
     // About
