@@ -118,7 +118,7 @@ const translations = {
   },
 } as const;
 
-type Translations = typeof translations.vi;
+type Translations = (typeof translations)[Locale];
 
 interface I18nContextType {
   locale: Locale;
