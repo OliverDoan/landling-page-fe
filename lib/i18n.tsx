@@ -35,7 +35,9 @@ const translations = {
         title: "GIỚI THIỆU",
         tagline: "NewEra Inc. - Công\u00A0ty công\u00A0nghệ đổi\u00A0mới",
         content1:
-          "NewEra Inc. thành\u00A0lập năm 2021. Trải qua quá\u00A0trình phát\u00A0triển, công\u00A0ty hiện\u00A0tại tập\u00A0trung cung\u00A0cấp giải\u00A0pháp công\u00A0nghệ và chuyển\u00A0đổi số toàn\u00A0diện cho ngành bán\u00A0lẻ.",
+          "NewEra Inc. thành\u00A0lập năm 2021.",
+        content1b:
+          "Trải qua quá\u00A0trình phát\u00A0triển, công\u00A0ty hiện\u00A0tại tập\u00A0trung cung\u00A0cấp giải\u00A0pháp công\u00A0nghệ và chuyển\u00A0đổi số toàn\u00A0diện cho ngành bán\u00A0lẻ.",
         content2:
           "Đội\u00A0ngũ nhân\u00A0sự đến từ các tập\u00A0đoàn hàng\u00A0đầu trong\u00A0nước và thế\u00A0giới.",
       },
@@ -89,7 +91,9 @@ const translations = {
         title: "INTRODUCTION",
         tagline: "NewEra Inc. - Innovative Technology Company",
         content1:
-          "NewEra Inc. was founded in 2021. Through continuous development, the company currently focuses on providing comprehensive technology solutions and digital transformation for the retail industry.",
+          "NewEra Inc. was founded in 2021.",
+        content1b:
+          "Through continuous development, the company currently focuses on providing comprehensive technology solutions and digital transformation for the retail industry.",
         content2:
           "Our team comes from leading domestic and international corporations.",
       },

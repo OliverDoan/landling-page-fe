@@ -58,6 +58,8 @@ function About() {
                     </motion.p>
                     <p className={styles.description}>
                         {t.about.section2.content1}
+                        <br />
+                        {t.about.section2.content1b}
                     </p>
                     <p className={styles.description}>
                         {t.about.section2.content2}
