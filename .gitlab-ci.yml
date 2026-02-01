@@ -1,0 +1,17 @@
+default:
+  tags:
+    - gke-platform-shared
+
+include:
+  - project: 'platform/sre/gitlab-ci-templates'
+    ref: ${PLATFORM_CI_TEMPLATES_VERSION}
+    file: '/main.yml'
+    inputs:
+      stack: "nodejs"
+      build_type: "nextjs-npm-docker"
+      workflow: "trunk-based"
+
+variables:
+  NODE_VERSION: "22"
+  SKIP_TESTS: "true"
+  MANIFEST_FILE_PATH: landing-page-fe/values.yaml
