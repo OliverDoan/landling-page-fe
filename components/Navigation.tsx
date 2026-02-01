@@ -10,7 +10,7 @@ export default function Navigation() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
-  const { locale, setLocale, t } = useI18n();
+  const { t } = useI18n();
 
   useEffect(() => setMounted(true), []);
 
@@ -69,17 +69,6 @@ export default function Navigation() {
               {navItems[3]}
             </motion.a>
 
-            {/* Language Toggle */}
-            <motion.button
-              onClick={() => setLocale(locale === "vi" ? "en" : "vi")}
-              className="rounded-lg bg-white/20 px-3 py-2 text-sm font-bold text-white hover:bg-white/30 transition-colors"
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.85 }}
-            >
-              {locale === "vi" ? "EN" : "VN"}
-            </motion.button>
-
             {/* Theme Toggle */}
             {mounted && (
               <motion.button
@@ -105,14 +94,6 @@ export default function Navigation() {
 
           {/* Mobile Menu Button + Controls */}
           <div className="lg:hidden flex items-center gap-2">
-            {/* Language Toggle Mobile */}
-            <button
-              onClick={() => setLocale(locale === "vi" ? "en" : "vi")}
-              className="p-2 rounded-lg bg-[#8B9AD9] dark:bg-[#2D3A6E] text-white text-sm font-bold hover:opacity-80 transition-colors h-fit"
-            >
-              {locale === "vi" ? "EN" : "VN"}
-            </button>
-
             {/* Theme Toggle Mobile */}
             {mounted && (
               <button

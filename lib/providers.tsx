@@ -2,12 +2,14 @@
 
 import { ThemeProvider } from "next-themes";
 import { I18nProvider } from "./i18n";
-import { ReactNode } from "react";
+import { ReactNode, Suspense } from "react";
 
 export function Providers({ children }: { children: ReactNode }) {
   return (
     <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-      <I18nProvider>{children}</I18nProvider>
+      <Suspense>
+        <I18nProvider>{children}</I18nProvider>
+      </Suspense>
     </ThemeProvider>
   );
 }

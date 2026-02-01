@@ -1,6 +1,7 @@
 "use client";
 
 import React, { createContext, useContext, useState, useEffect, ReactNode } from "react";
+import { useSearchParams } from "next/navigation";
 
 export type Locale = "vi" | "en";
 
@@ -121,26 +122,28 @@ type Translations = typeof translations.vi;
 
 interface I18nContextType {
   locale: Locale;
-  setLocale: (locale: Locale) => void;
   t: Translations;
 }
 
 const I18nContext = createContext<I18nContextType | null>(null);
 
 export function I18nProvider({ children }: { children: ReactNode }) {
-  const [locale, setLocale] = useState<Locale>("vi");
+  const searchParams = useSearchParams();
+  const langParam = searchParams.get("lang");
+  const [browserLocale, setBrowserLocale] = useState<Locale>("vi");
 
   useEffect(() => {
-    const browserLang = navigator.language;
-    if (browserLang.startsWith("en")) {
-      setLocale("en");
+    if (navigator.language.startsWith("en")) {
+      setBrowserLocale("en");
     }
   }, []);
 
+  const locale: Locale =
+    langParam === "en" || langParam === "vi" ? langParam : browserLocale;
   const t = translations[locale];
 
   return (
-    <I18nContext.Provider value={{ locale, setLocale, t }}>
+    <I18nContext.Provider value={{ locale, t }}>
       {children}
     </I18nContext.Provider>
   );
