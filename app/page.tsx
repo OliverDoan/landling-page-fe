@@ -8,29 +8,40 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import About from "@/components/About";
 
+const ENABLE_LOADING = process.env.NEXT_PUBLIC_ENABLE_LOADING === "true";
+
 export default function Home() {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(ENABLE_LOADING);
 
   return (
     <>
-      {/* MainContent luôn được render để background sẵn sàng */}
-      <AnimatePresence>
-        {!isLoading && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            <Navigation />
-            <Header />
-            <About />
-            <Footer />
-          </motion.div>
-        )}
-      </AnimatePresence>
-      {/* Loading overlay */}
-      {isLoading && <Loading onComplete={() => setIsLoading(false)} />}
+      {ENABLE_LOADING ? (
+        <>
+          <AnimatePresence>
+            {!isLoading && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.5 }}
+              >
+                <Navigation />
+                <Header />
+                <About />
+                <Footer />
+              </motion.div>
+            )}
+          </AnimatePresence>
+          {isLoading && <Loading onComplete={() => setIsLoading(false)} />}
+        </>
+      ) : (
+        <>
+          <Navigation />
+          <Header />
+          <About />
+          <Footer />
+        </>
+      )}
     </>
   );
 }
