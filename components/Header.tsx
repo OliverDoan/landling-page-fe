@@ -4,6 +4,7 @@ import Image from "next/image";
 import React from "react";
 import styles from "./style/Header.module.css";
 import { useI18n } from "@/lib/i18n";
+import DiscoverButton from "@/components/discover-button";
 
 function Header() {
   const { t } = useI18n();
@@ -47,12 +48,25 @@ function Header() {
           </p>
 
           <div className={styles.ctaContainer}>
-            <button className={styles.ctaButton}>
-              {t.header.cta}
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M7 4L13 10L7 16" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            <DiscoverButton />
+            {/* <button className={styles.ctaButton}>
+              Tìm Hiểu Thêm
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M7 4L13 10L7 16"
+                  stroke="white"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
               </svg>
-            </button>
+            </button> */}
           </div>
         </div>
       </div>
