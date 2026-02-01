@@ -91,6 +91,22 @@
   overflow: hidden;
 }
 
+:global(.dark) .backgroundImage::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(5, 5, 25, 0.65);
+  z-index: 1;
+}
+
+:global(.dark) .stickyContainer {
+  background-color: #080818;
+}
+
+:global(.dark) .scrollSection {
+  background-color: #080818;
+}
+
 /* Content Wrapper */
 .contentWrapper {
   position: relative;

@@ -19,6 +19,10 @@ line-height: 28px; /* 125% */
     padding-top: 100px;
 }
 
+:global(.dark) .footer {
+    background-color: #080818;
+}
+
 @media (min-width: 320px) {
     .titleCard {
         font-size: 24px;
