@@ -4,9 +4,9 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Loading from "@/components/Loading";
 import Navigation from "@/components/Navigation";
-import MainContent from "@/components/MainContent";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import About from "@/components/About";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -24,7 +24,7 @@ export default function Home() {
           >
             <Navigation />
             <Header />
-            {/* <MainContent /> */}
+            <About />
             <Footer />
           </motion.div>
         )}

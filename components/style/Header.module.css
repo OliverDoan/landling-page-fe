@@ -163,10 +163,13 @@ letter-spacing: 0.24px;
 
   .header {
     padding: 24px;
+  
   }
 
   .container {
     gap: 32px;
+    min-height: calc(100vh - 50px);
+    
   }
 
   .topSection {
