@@ -1,9 +1,8 @@
 "use client";
 
-import React from 'react';
-import styles from "./style/Banner.module.css";
-import Image from 'next/image';
 import { useI18n } from "@/lib/i18n";
+import Image from 'next/image';
+import styles from "./style/Banner.module.css";
 
 function Banner() {
     const { t } = useI18n();
@@ -17,12 +16,12 @@ function Banner() {
                         <div className="flex flex-col justify-between flex-1">
                             {/* Tag "Điểm khác biệt" */}
                             <div className={styles.topSection} >
-                                <div className={styles.topContent} style={{ alignItems: 'flex-start' }}>
-                                    <div className={styles.tagContainer}>
-                                        <div className={styles.tagDot}></div>
-                                        <span className={styles.tagText}>{t.banner.tag}</span>
-                                    </div>
-                                </div>
+
+                                <div className=" flex items-center justify-start w-fit px-[12px] text-[#173DC9] py-[8px] gap-[12px] rounded-[4px] bg-[rgba(23,61,201,0.2)] backdrop-blur-[6px]  text-[20px] font-semibold leading-[26px] tracking-[0.2px]">
+                                    <div className="size-[12px] aspect-square bg-[#173DC9] rounded-[4px]" />
+                                    {t.banner.tag}</div>
+
+                                    
                             </div>
 
                             {/* Tagline - Căn với bottom của right column */}
@@ -60,21 +59,8 @@ function Banner() {
                 </div>
                 <div className='flex flex-col gap-2 w-full justify-center items-center mt-6'>
 
-                    {/* <div className={styles.topSection}>
-                        <div className={styles.topContent}>
-                            <div className={styles.tagContainer}>
-                                <div className={styles.tagDot}></div>
-                                <span className={styles.tagText}>{t.banner.tag}</span>
-                            </div>
-                        </div>
-                    </div> */}
                     <div className={styles.title} >
-                        {/* {t.banner.bottomTagline.split(', ').map((part, index, array) => (
-                            <React.Fragment key={index}>
-                                {part}
-                                {index < array.length - 1 && <br />}
-                            </React.Fragment>
-                        ))} */}
+
                     </div>
                 </div>
 

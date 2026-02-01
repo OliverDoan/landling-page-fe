@@ -1,6 +1,6 @@
 "use client";
 
-import React, { createContext, useContext, useState, useEffect, ReactNode } from "react";
+import React, { createContext, useContext, useState, ReactNode } from "react";
 import { useSearchParams } from "next/navigation";
 
 export type Locale = "vi" | "en";
@@ -48,6 +48,10 @@ const translations = {
         card2: "Giải\u00A0pháp quản\u00A0lý đối\u00A0tác bán\u00A0lẻ",
         card3: "Chuỗi cung\u00a0ứng đầu\u00a0cuối",
         card4: "Bán lẻ thông minh & Internet vạn vật",
+        card5: "Quảng cáo tại điểm bán",
+        card6: "Tương tác & chăm sóc khách hàng",
+        card7: "Dịch vụ tài chính",
+        card8: "Dữ liệu & quản trị rủi ro",
       },
     },
     // Banner
@@ -107,12 +111,16 @@ const translations = {
           "Our team comes from leading domestic and international corporations.",
       },
       section3: {
-        title: "Products",
-        title2: "& Solutions",
-        card1: "Payment & Digital Banking",
-        card2: "Retail Partner Management Solutions",
-        card3: "End-to-End Supply Chain",
-        card4: "Smart Retail & Internet of Things",
+        title: "Core Product",
+        title2: "Pillars",
+        card1: "Payment & Banking",
+        card2: "Merchant Solution",
+        card3: "E2E Supply Chain",
+        card4: "IoT & Smart Retail",
+        card5: "Retail Media",
+        card6: "Engagement & Loyalty",
+        card7: "Financial Services",
+        card8: "Data & Risk Intelligence (AI & Data)",
       },
     },
     banner: {
@@ -151,13 +159,13 @@ const I18nContext = createContext<I18nContextType | null>(null);
 export function I18nProvider({ children }: { children: ReactNode }) {
   const searchParams = useSearchParams();
   const langParam = searchParams.get("lang");
-  const [browserLocale, setBrowserLocale] = useState<Locale>("vi");
-
-  useEffect(() => {
-    if (navigator.language.startsWith("en")) {
-      setBrowserLocale("en");
+  // Khởi tạo browserLocale ngay từ đầu thay vì dùng useEffect
+  const [browserLocale] = useState<Locale>(() => {
+    if (typeof window !== "undefined" && navigator.language.startsWith("en")) {
+      return "en";
     }
-  }, []);
+    return "vi";
+  });
 
   const locale: Locale =
     langParam === "en" || langParam === "vi" ? langParam : browserLocale;
