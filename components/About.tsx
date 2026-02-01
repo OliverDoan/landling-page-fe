@@ -49,9 +49,14 @@ function About() {
             id: 1,
             title: t.about.section1.title,
             content: (
-                <p className={styles.description}>
+                <motion.p 
+                  className={styles.description}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                >
                     {t.about.section1.content}
-                </p>
+                </motion.p>
             ),
             number: "01"
         },
@@ -68,14 +73,24 @@ function About() {
                     >
                         {t.about.section2.tagline}
                     </motion.p>
-                    <p className={styles.description}>
+                    <motion.p 
+                      className={styles.description}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: 0.2 }}
+                    >
                         {t.about.section2.content1}
                         <br />
                         {t.about.section2.content1b}
-                    </p>
-                    <p className={styles.description}>
+                    </motion.p>
+                    <motion.p 
+                      className={styles.description}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: 0.4 }}
+                    >
                         {t.about.section2.content2}
-                    </p>
+                    </motion.p>
                 </>
             ),
             number: "02"
@@ -222,18 +237,26 @@ function About() {
     return (
         <section ref={scrollSectionRef} className={styles.scrollSection}>
             <div className={styles.stickyContainer}>
-                <div className={styles.backgroundImage}>
+                <motion.div 
+                  className={styles.backgroundImage}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 1 }}
+                >
                     <Image src="/bg-header.webp" alt="About Background" fill className={styles.bgImage} priority unoptimized />
-                </div>
+                </motion.div>
 
                 <div className={styles.topSection}>
                     <div className={styles.topContent} style={{ alignItems: 'flex-start' }}>
-
-
-
-                        <div className=" flex items-center justify-center px-[12px] text-[#173DC9] py-[8px] gap-[12px] rounded-[8px] bg-[rgba(23,61,201,0.2)] backdrop-blur-[6px]  text-[20px] font-semibold leading-[26px] tracking-[0.2px]">
+                        <motion.div 
+                          className=" flex items-center justify-center px-[12px] text-[#173DC9] py-[8px] gap-[12px] rounded-[8px] bg-[rgba(23,61,201,0.2)] backdrop-blur-[6px]  text-[20px] font-semibold leading-[26px] tracking-[0.2px]"
+                          initial={{ opacity: 0, y: -20 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.6 }}
+                        >
                             <div className="size-[12px] aspect-square bg-[#173DC9] rounded-[4px]" />
-                            {t.about.tag}</div>
+                            {t.about.tag}
+                        </motion.div>
                     </div>
                     <div className={styles.processBarContainer}>
                         <motion.div className={styles.processBar} style={{ width: processBarWidth }} />

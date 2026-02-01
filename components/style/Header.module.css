@@ -1,7 +1,7 @@
 .header {
   position: relative;
   width: 100%;
-  min-height: 100vh;
+  /* max-height: 100vh; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -18,9 +18,14 @@
 }
 
 .bgImage {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  z-index: 0;
+  /* border-radius: 8px; */
 }
 
 :global(.dark) .backgroundImage::after {
@@ -56,16 +61,15 @@
 }
 
 .mainTitle {
- 
-/* 9xl */
-font-size: 96px;
-font-style: normal;
-font-weight: 700;
+  /* 9xl */
+  font-size: 96px;
+  font-style: normal;
+  font-weight: 700;
   margin: 0;
   background: linear-gradient(90deg, #060606 0%, #173DC9 100%);
-background-clip: text;
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 :global(.dark) .mainTitle {
@@ -82,26 +86,25 @@ background-clip: text;
   color: #0056FF;
 }
 
-.middleSection {
-}
+.middleSection {}
 
 .subtitle {
-    display: inline-block; 
-    font-size: 96px;
-    font-weight: 700;
-  
-    background: linear-gradient(90deg, #060606 0%, #173DC9 100%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
+  display: inline-block;
+  font-size: 96px;
+  font-weight: 700;
+
+  background: linear-gradient(90deg, #060606 0%, #173DC9 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
 :global(.dark) .subtitle {
   background: linear-gradient(90deg, #e0e7ff 0%, #6B8AFF 100%);
   background-clip: text;
   -webkit-background-clip: text;
 }
-  
+
 
 .highlight {
   color: #0056FF;
@@ -124,12 +127,13 @@ background-clip: text;
 
   color: var(--black, #060606);
 
-/* 2xl */
-font-size: 24px;
-font-style: normal;
-font-weight: 500;
-line-height: 36px; /* 150% */
-letter-spacing: 0.24px;
+  /* 2xl */
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 36px;
+  /* 150% */
+  letter-spacing: 0.24px;
 }
 
 :global(.dark) .description {
@@ -180,7 +184,7 @@ letter-spacing: 0.24px;
   .description {
     font-size: 14px;
     line-height: 24px;
-    
+
   }
 
   .header {
@@ -193,13 +197,13 @@ letter-spacing: 0.24px;
 
   .header {
     padding: 24px;
-  
+
   }
 
   .container {
     gap: 32px;
     min-height: calc(100vh - 50px);
-    
+
   }
 
   .topSection {

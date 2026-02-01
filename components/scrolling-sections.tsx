@@ -1,6 +1,7 @@
 "use client"
 
 import Image from "next/image"
+import { motion } from "framer-motion"
 import { useI18n, type Locale } from "@/lib/i18n"
 // import styles from "./style/Banner.module.css";
 
@@ -78,16 +79,19 @@ const sectionsData: Record<Locale, Section[]> = {
 type HeaderData = {
   tag: string
   tagline: string
+  tagline2: string
 }
 
 const headerData: Record<Locale, HeaderData> = {
   en: {
     tag: "Why Choose NewEra Inc.",
-    tagline: "Personalize experiences, reliable operations, and sustainable expansion",
+    tagline: "Personalize experiences, ",
+    tagline2: "reliable operations, and sustainable expansion",
   },
   vi: {
     tag: "Lý do lựa chọn NewEra Inc.",
-    tagline: "Cá nhân hoá trải nghiệm, vận hành tin cậy và mở rộng bền vững",
+    tagline: "Cá nhân hoá trải nghiệm, ",
+    tagline2: "vận hành tin cậy và mở rộng bền vững",
   },
 }
 
@@ -102,49 +106,95 @@ const ScrollingSections = () => {
         {/* Header Section */}
         <div className="flex flex-col items-center gap-6 py-8 md:py-16">
           {/* Tag */}
-          <div className="inline-flex items-center gap-2 border border-gray-300/20 rounded-full">
+          <motion.div
+            className="inline-flex items-center gap-2 border border-gray-300/20 rounded-full"
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
             <div className="flex items-center justify-center px-[12px] text-[#173DC9] py-[8px] gap-[12px] rounded-[8px] bg-[rgba(23,61,201,0.2)] backdrop-blur-[6px] text-[16px] md:text-[20px] font-semibold leading-[22px] md:leading-[26px] tracking-[0.2px]">
               <div className="size-[12px] aspect-square bg-[#173DC9] rounded-[4px]" />
               {header.tag}
             </div>
-          </div>
+          </motion.div>
 
           {/* Tagline */}
-          <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold md:text-center text-gray-900 max-w-4xl px-4">
+          <motion.h1
+            className="text-[24px] md:text-4xl lg:text-[30px] font-bold md:text-center text-gray-900 max-w-4xl px-4"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
             {header.tagline}
-          </h1>
+            <br />
+            {header.tagline2}
+          </motion.h1>
         </div>
 
         {/* Sections */}
         {sections.map((section, index) => (
-          <div
+          <motion.div
             key={index}
             className="relative w-full md:min-h-screen flex items-center justify-center transition-all duration-700 ease-in-out py-8 md:py-0"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8 }}
           >
             <div className="flex flex-col md:flex-row w-full gap-6 md:gap-[24px]">
               {/* Image Section */}
-              <div className="relative flex flex-1 items-center justify-center order-1 md:order-1">
-                <div className="relative w-full h-[300px] md:h-[684px]">
+              <motion.div
+                className="relative flex flex-1 items-center justify-center order-1 md:order-1"
+                initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+              >
+                <motion.div
+                  className="relative w-full h-[300px] md:h-[684px]"
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ duration: 0.3 }}
+                >
                   <Image
                     src={section.image}
                     alt={section.title}
                     fill
                     className="object-cover rounded-[12px]"
                   />
-                </div>
-              </div>
+                </motion.div>
+              </motion.div>
 
               {/* Text Section */}
-              <div className="flex flex-1 flex-col justify-center gap-4 md:gap-6 px-0 md:pr-12 border-t border-t-[rgba(253,253,253,0.4)] pt-4 md:pt-0 order-2 md:order-2">
-                <h2 className={`text-2xl md:text-[46px] font-bold leading-[32px] md:leading-[56px] tracking-[0.24px] md:tracking-[0.48px] ${section.contentColor}`}>
+              <motion.div
+                className="flex flex-1 flex-col justify-center gap-4 md:gap-6 px-0 md:pr-12 border-t border-t-[rgba(253,253,253,0.4)] pt-4 md:pt-0 order-2 md:order-2"
+                initial={{ opacity: 0, x: index % 2 === 0 ? 50 : -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+              >
+                <motion.h2
+                  className={`text-2xl md:text-[46px] font-bold leading-[32px] md:leading-[56px] tracking-[0.24px] md:tracking-[0.48px] ${section.contentColor}`}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.4 }}
+                >
                   {section.title}
-                </h2>
-                <p className={`text-base md:text-[24px] font-medium leading-[24px] md:leading-[30px] tracking-[0.16px] md:tracking-[0.24px] ${section.contentColor === 'text-blue-600' ? 'text-blue-600/80' : 'text-white/90'}`}>
+                </motion.h2>
+                <motion.p
+                  className={`text-base md:text-[24px] font-medium leading-[24px] md:leading-[30px] tracking-[0.16px] md:tracking-[0.24px] ${section.contentColor === 'text-blue-600' ? 'text-blue-600/80' : 'text-white/90'}`}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.5 }}
+                >
                   {section.description}
-                </p>
-              </div>
+                </motion.p>
+              </motion.div>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>

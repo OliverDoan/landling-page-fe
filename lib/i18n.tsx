@@ -57,7 +57,8 @@ const translations = {
     // Banner
     banner: {
       tag: "Điểm khác biệt",
-      tagline: "Chúng tôi không chỉ tư vấn giải pháp.",
+      tagline: "Chúng tôi không chỉ ",
+      tagline2: "tư vấn giải pháp",
       title: "NEWERA INC. TẬP TRUNG VÀO XÂY DỰNG, VẬN HÀNH, VÀ NHÂN RỘNG HỆ THỐNG",
       description:
         "Mỗi dự án được triển khai bởi đội ngũ chuyên gia theo từng lĩnh vực cụ thể, với kinh nghiệm thực chiến sâu rộng nhằm giải quyết đúng và trúng các bài toán kinh doanh.",
@@ -125,7 +126,8 @@ const translations = {
     },
     banner: {
       tag: "What Sets Us Apart",
-      tagline: "We go beyond consulting.",
+      tagline: "We go beyond ",
+      tagline2: "consulting",
       title: "NEWERA INC. FOCUSES ON BUILDING, OPERATING, AND SCALING SYSTEMS",
       description:
         "Each project is delivered by domain-specific experts with deep hands-on experience, focused on solving real business challenges.",

@@ -47,16 +47,27 @@ export default function Navigation() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
           >
-            <Image
-              src="/logo-blue.png"
-              alt="NewEra Logo"
-              width={32}
-              height={32}
-              className="sm:w-10 sm:h-10"
-            />
-            <span className="text-base sm:text-lg lg:text-xl font-semibold text-blue-900 dark:text-blue-300">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.5 }}
+            >
+              <Image
+                src="/logo-blue.png"
+                alt="NewEra Logo"
+                width={32}
+                height={32}
+                className="sm:w-10 sm:h-10"
+              />
+            </motion.div>
+            <motion.span
+              className="text-base sm:text-lg lg:text-xl font-semibold text-blue-900 dark:text-blue-300"
+              initial={{ opacity: 0, x: -10 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.6 }}
+            >
               NewEra Inc.
-            </span>
+            </motion.span>
           </motion.div>
 
           {/* Desktop Navigation Links */}
@@ -172,7 +183,7 @@ export default function Navigation() {
               className="lg:hidden mt-4 bg-[#8B9AD9] dark:bg-[#2D3A6E] rounded-2xl p-4"
             >
               <div className="flex flex-col gap-3">
-                {navItems.slice(0, 3).map((item, index) => (
+                {navItems.slice(0, 3).map((item) => (
                   <a
                     key={item.id}
                     href={`#${item.id}`}

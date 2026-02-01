@@ -45,8 +45,8 @@ text-wrap: balance;
 
     .footer {
         padding: 24px;
-        min-height: calc(100vh - 250px);
-        /* padding-top: 100px; */
+        min-height: calc(100vh);
+        padding-top: 120px;
     }
 }
 
@@ -151,7 +151,7 @@ backdrop-filter: blur(6px);
         .cardWhite {
             padding: 24px;
             border-radius: 24px;
-            min-height: 480px;
+            min-height: 340px;
             flex-direction: row;
             gap: 24px;
         }
