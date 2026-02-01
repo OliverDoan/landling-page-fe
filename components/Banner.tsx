@@ -3,9 +3,11 @@
 import React from 'react';
 import styles from "./style/Banner.module.css";
 import Image from 'next/image';
-
+import { useI18n } from "@/lib/i18n";
 
 function Banner() {
+    const { t } = useI18n();
+
     return (
         <>
             <section className="w-full  py-16">
@@ -18,14 +20,14 @@ function Banner() {
                                 <div className={styles.topContent}>
                                     <div className={styles.tagContainer}>
                                         <div className={styles.tagDot}></div>
-                                        <span className={styles.tagText}>Về NewEra Inc.</span>
+                                        <span className={styles.tagText}>{t.banner.tag}</span>
                                     </div>
                                 </div>
                             </div>
 
                             {/* Tagline - Căn với bottom của right column */}
                             <p className="text-2xl md:text-3xl font-bold text-black mt-auto">
-                                Chúng tôi không chỉ tư vấn giải pháp.
+                                {t.banner.tagline}
                             </p>
                         </div>
 
@@ -34,14 +36,14 @@ function Banner() {
                             {/* Main Title */}
                             <div className="space-y-0">
                                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold uppercase leading-tight">
-                                    <span className="text-[#373D6B]">NEWERA INC. TẬP TRUNG VÀO XÂY DỰNG, VẬN HÀNH, VÀ NHÂN RỘNG HỆ THỐNG</span>
+                                    <span className="text-[#373D6B]">{t.banner.title}</span>
                                 </h2>
 
                             </div>
 
                             {/* Supporting Paragraph */}
                             <p className="text-base md:text-lg text-[#6B7095] font-normal leading-relaxed">
-                                Mỗi dự án được triển khai bởi đội ngũ chuyên gia theo từng lĩnh vực cụ thể, với kinh nghiệm thực chiến sâu rộng nhằm giải quyết đúng và trúng các bài toán kinh doanh.
+                                {t.banner.description}
                             </p>
                         </div>
                     </div>
@@ -62,15 +64,17 @@ function Banner() {
                         <div className={styles.topContent}>
                             <div className={styles.tagContainer}>
                                 <div className={styles.tagDot}></div>
-                                <span className={styles.tagText}>Về NewEra Inc.</span>
+                                <span className={styles.tagText}>{t.banner.tag}</span>
                             </div>
                         </div>
                     </div>
                     <div className={styles.title} >
-                        Cá nhân hoá trải nghiệm, <br />
-                        <span >
-                            vận hành tin cậy và mở rộng bền vững
-                        </span>
+                        {t.banner.bottomTagline.split(', ').map((part, index, array) => (
+                            <React.Fragment key={index}>
+                                {part}
+                                {index < array.length - 1 && <br />}
+                            </React.Fragment>
+                        ))}
                     </div>
                 </div>
 

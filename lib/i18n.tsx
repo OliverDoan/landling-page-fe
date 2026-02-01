@@ -50,6 +50,15 @@ const translations = {
         card4: "Bán lẻ thông minh & Internet vạn vật",
       },
     },
+    // Banner
+    banner: {
+      tag: "Về NewEra Inc.",
+      tagline: "Chúng tôi không chỉ tư vấn giải pháp.",
+      title: "NEWERA INC. TẬP TRUNG VÀO XÂY DỰNG, VẬN HÀNH, VÀ NHÂN RỘNG HỆ THỐNG",
+      description:
+        "Mỗi dự án được triển khai bởi đội ngũ chuyên gia theo từng lĩnh vực cụ thể, với kinh nghiệm thực chiến sâu rộng nhằm giải quyết đúng và trúng các bài toán kinh doanh.",
+      bottomTagline: "Cá nhân hoá trải nghiệm, vận hành tin cậy và mở rộng bền vững",
+    },
     // Footer
     footer: {
       newsletterTitle:
@@ -105,6 +114,14 @@ const translations = {
         card3: "End-to-End Supply Chain",
         card4: "Smart Retail & Internet of Things",
       },
+    },
+    banner: {
+      tag: "About NewEra Inc.",
+      tagline: "We go beyond consulting.",
+      title: "NEWERA INC. FOCUSES ON BUILDING, OPERATING, AND SCALING SYSTEMS",
+      description:
+        "Each project is delivered by domain-specific experts with deep hands-on experience, focused on solving real business challenges.",
+      bottomTagline: "Personalize experiences, reliable operations, and sustainable expansion",
     },
     footer: {
       newsletterTitle:
