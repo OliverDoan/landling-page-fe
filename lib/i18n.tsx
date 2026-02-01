@@ -45,7 +45,7 @@ const translations = {
         title: "Sản phẩm",
         title2: "& giải pháp",
         card1: "Thanh Toán & Ngân Hàng Số",
-        card2: "Giải pháp quản lý đối tác bán lẻ",
+        card2: "Giải\u00A0pháp quản\u00A0lý đối\u00A0tác bán\u00A0lẻ",
         card3: "Chuỗi cung\u00a0ứng đầu\u00a0cuối",
         card4: "Bán lẻ thông minh & Internet vạn vật",
       },
