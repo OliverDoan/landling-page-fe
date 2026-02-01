@@ -3,8 +3,11 @@
 import Image from "next/image";
 import React from "react";
 import styles from "./style/Header.module.css";
+import { useI18n } from "@/lib/i18n";
 
 function Header() {
+  const { t } = useI18n();
+
   return (
     <header className={styles.header}>
       {/* Background Image */}
@@ -24,48 +27,30 @@ function Header() {
         {/* Top Section - REIMAGINED Title */}
         <div className={styles.topSection}>
           <h1 className={styles.mainTitle}>
-            REIMAGINED
+            {t.header.mainTitle}
           </h1>
           <div className={styles.middleSection}>
             <div className={styles.subtitle}>
-              Kiến tạo, phát triển,
+              {t.header.subtitle1}
             </div>
             <br />
             <div className={styles.subtitle}>
-              thấu hiểu, cộng hưởng.
+              {t.header.subtitle2}
             </div>
           </div>
         </div>
 
-        {/* Middle Section - Subtitle */}
-
-
         {/* Bottom Section - Description and CTA */}
         <div className={styles.bottomSection}>
-          {/* Description Text */}
           <p className={styles.description}>
-            Hệ sinh thái công nghệ toàn diện, tích hợp thanh toán,
-            trí tuệ nhân tạo, Internet vạn vật và dữ liệu.
+            {t.header.description}
           </p>
 
-          {/* CTA Buttons */}
           <div className={styles.ctaContainer}>
             <button className={styles.ctaButton}>
-              Tìm Hiểu Thêm
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 20 20"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M7 4L13 10L7 16"
-                  stroke="white"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
+              {t.header.cta}
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7 4L13 10L7 16" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </button>
           </div>

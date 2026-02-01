@@ -54,6 +54,12 @@ background-clip: text;
 -webkit-text-fill-color: transparent;
 }
 
+:global(.dark) .mainTitle {
+  background: linear-gradient(90deg, #e0e7ff 0%, #6B8AFF 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
 .titlePart1 {
   color: #1A212E;
 }
@@ -75,6 +81,12 @@ background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
+
+:global(.dark) .subtitle {
+  background: linear-gradient(90deg, #e0e7ff 0%, #6B8AFF 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+}
   
 
 .highlight {
@@ -104,6 +116,10 @@ font-style: normal;
 font-weight: 500;
 line-height: 30px; /* 125% */
 letter-spacing: 0.24px;
+}
+
+:global(.dark) .description {
+  color: #d1d5db;
 }
 
 .ctaContainer {

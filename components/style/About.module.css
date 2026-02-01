@@ -161,12 +161,19 @@
 .tagText {
   color: #173DC9;
 
-
 font-size: 20px;
 font-style: normal;
 font-weight: 600;
 line-height: 26px; /* 130% */
 letter-spacing: 0.2px;
+}
+
+:global(.dark) .tagContainer {
+  background-color: rgba(52, 106, 255, 0.25);
+}
+
+:global(.dark) .tagText {
+  color: #6B8AFF;
 }
 
 /* Content Container */
@@ -298,6 +305,13 @@ letter-spacing: 0.3px;
   text-transform: uppercase;
 }
 
+:global(.dark) .title {
+  background: linear-gradient(90deg, #e0e7ff 0%, #6B8AFF 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 /* Tagline */
 .tagline {
     color:  #173DC9;
@@ -307,6 +321,10 @@ letter-spacing: 0.3px;
     font-style: normal;
     font-weight: 600;
     line-height: 42px; /* 116.667% */
+}
+
+:global(.dark) .tagline {
+    color: #6B8AFF;
 }
 
 .description {
@@ -319,6 +337,11 @@ letter-spacing: 0.3px;
     line-height: 38px; /* 126.667% */
     letter-spacing: 0.3px;
 }
+
+:global(.dark) .description {
+    color: #d1d5db;
+}
+
 /* Number Counter Wrapper - Cùng max-width và padding với contentContainer */
 .numberCounterWrapper {
   max-width: 1280px;
@@ -342,10 +365,22 @@ letter-spacing: 0.3px;
   margin-left: 0; /* Căn trái để thẳng hàng với title */
 }
 
+:global(.dark) .numberCounter {
+  border-color: #d1d5db;
+}
+
+:global(.dark) .numberTotal {
+  color: #e5e7eb;
+}
+
 .numberCurrent {
   font-size: 24px;
   font-weight: 700;
   color: #1F2937;
+}
+
+:global(.dark) .numberCurrent {
+  color: #e5e7eb;
 }
 
 .numberSeparator {
@@ -369,15 +404,21 @@ text-transform: uppercase;
 @media (max-width: 1023px) {
   .contentContainer {
     grid-template-columns: 1fr;
-    gap: 48px;
+    gap: 24px;
   }
 
   .title {
-    font-size: 64px;
+    font-size: 36px;
   }
 
   .tagline {
-    font-size: 20px;
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .description {
+    font-size: 16px;
+    line-height: 24px;
   }
 
   .cardsContainer {
@@ -390,35 +431,54 @@ text-transform: uppercase;
   }
 
   .cardsColumn:last-child {
-    justify-content: flex-start; /* Reset căn giữa trên mobile */
+    justify-content: flex-start;
+    transform: none !important;
   }
 
   .card {
-    min-height: 160px;
-    padding: 20px;
+    min-height: 120px;
+    padding: 16px;
+    width: 100%;
   }
 
   .cardNumber {
-    font-size: 40px;
+    font-size: 20px;
+    line-height: 28px;
   }
 
   .cardText {
     font-size: 16px;
+    line-height: 22px;
   }
 }
 
 @media (max-width: 640px) {
+  .topSection {
+    padding: 80px 0px 0px;
+  }
+
+  .tagText {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
   .aboutSection {
-    padding: 120px 16px 60px;
+    padding: 80px 16px 60px;
     gap: 24px;
   }
 
   .title {
-    font-size: 48px;
+    font-size: 28px;
   }
 
   .tagline {
-    font-size: 18px;
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  .description {
+    font-size: 14px;
+    line-height: 22px;
   }
 
   .separator {
@@ -426,14 +486,14 @@ text-transform: uppercase;
   }
 
   .numberCounter {
-    margin-top: 60px;
+    margin-top: 40px;
     padding: 0 16px;
   }
 
   .numberCurrent,
   .numberSeparator,
   .numberTotal {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   .cardsContainer {
@@ -446,20 +506,24 @@ text-transform: uppercase;
   }
 
   .cardsColumn:last-child {
-    justify-content: flex-start; /* Reset căn giữa trên mobile */
+    justify-content: flex-start;
+    transform: none !important;
   }
 
   .card {
-    min-height: 140px;
-    padding: 16px;
+    min-height: 100px;
+    padding: 14px;
+    width: 100%;
   }
 
   .cardNumber {
-    font-size: 36px;
+    font-size: 18px;
+    line-height: 24px;
   }
 
   .cardText {
     font-size: 14px;
+    line-height: 20px;
   }
 
   .cardIcon svg {
