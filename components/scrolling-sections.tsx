@@ -17,7 +17,7 @@ const sectionsData: Record<Locale, Section[]> = {
     {
       title: "Human-Centric Personalization",
       description:
-        "NewEra Inc. builds flexible digital platforms, leveraging AI to personalize experiences based on behavior and context, bringing technology closer to more than 100 million Vietnamese.",
+        "NewEra Inc. builds flexible, customizable digital platforms, leveraging AI to personalize experiences based on behavior and context - bringing technology closer to more than 100 million Vietnamese users.",
       image: "/why-01.webp",
       contentColor: "text-blue-600",
     },
@@ -98,19 +98,19 @@ const ScrollingSections = () => {
 
   return (
     <div className="bg-[linear-gradient(180deg,#FDFDFD_0%,#173DC9_100%)]">
-      <div className="relative container mx-auto max-w-7xl">
+      <div className="relative w-full px-4 md:container md:mx-auto md:max-w-7xl">
         {/* Header Section */}
-        <div className="flex flex-col items-center gap-6">
+        <div className="flex flex-col items-center gap-6 py-8 md:py-16">
           {/* Tag */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/50 border border-gray-300/20 rounded-full">
-
-            <div className=" flex items-center justify-center px-[12px] text-[#173DC9] py-[8px] gap-[12px] rounded-[8px] bg-[rgba(23,61,201,0.2)] backdrop-blur-[6px]  text-[20px] font-semibold leading-[26px] tracking-[0.2px]">
+          <div className="inline-flex items-center gap-2 border border-gray-300/20 rounded-full">
+            <div className="flex items-center justify-center px-[12px] text-[#173DC9] py-[8px] gap-[12px] rounded-[8px] bg-[rgba(23,61,201,0.2)] backdrop-blur-[6px] text-[16px] md:text-[20px] font-semibold leading-[22px] md:leading-[26px] tracking-[0.2px]">
               <div className="size-[12px] aspect-square bg-[#173DC9] rounded-[4px]" />
-              {header.tag}</div>
+              {header.tag}
+            </div>
           </div>
 
           {/* Tagline */}
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-gray-900 max-w-4xl">
+          <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold md:text-center text-gray-900 max-w-4xl px-4">
             {header.tagline}
           </h1>
         </div>
@@ -119,12 +119,12 @@ const ScrollingSections = () => {
         {sections.map((section, index) => (
           <div
             key={index}
-            className="relative w-full min-h-screen flex items-center justify-center transition-all duration-700 ease-in-out"
+            className="relative w-full md:min-h-screen flex items-center justify-center transition-all duration-700 ease-in-out py-8 md:py-0"
           >
-            <div className="flex w-full gap-[24px]">
+            <div className="flex flex-col md:flex-row w-full gap-6 md:gap-[24px]">
               {/* Image Section */}
-              <div className="relative flex flex-1 items-center justify-center">
-                <div className="relative w-full h-[684px]">
+              <div className="relative flex flex-1 items-center justify-center order-1 md:order-1">
+                <div className="relative w-full h-[300px] md:h-[684px]">
                   <Image
                     src={section.image}
                     alt={section.title}
@@ -135,11 +135,11 @@ const ScrollingSections = () => {
               </div>
 
               {/* Text Section */}
-              <div className="flex flex-1 flex-col justify-center gap-6 pr-12 border-t border-t-[rgba(253,253,253,0.4)]">
-                <h2 className={`text-[46px] font-bold leading-[56px] tracking-[0.48px] ${section.contentColor}`}>
+              <div className="flex flex-1 flex-col justify-center gap-4 md:gap-6 px-0 md:pr-12 border-t border-t-[rgba(253,253,253,0.4)] pt-4 md:pt-0 order-2 md:order-2">
+                <h2 className={`text-2xl md:text-[46px] font-bold leading-[32px] md:leading-[56px] tracking-[0.24px] md:tracking-[0.48px] ${section.contentColor}`}>
                   {section.title}
                 </h2>
-                <p className={`text-lg text-[24px] font-medium leading-[30px] tracking-[0.24px] ${section.contentColor === 'text-blue-600' ? 'text-blue-600/80' : 'text-white/90'}`}>
+                <p className={`text-base md:text-[24px] font-medium leading-[24px] md:leading-[30px] tracking-[0.16px] md:tracking-[0.24px] ${section.contentColor === 'text-blue-600' ? 'text-blue-600/80' : 'text-white/90'}`}>
                   {section.description}
                 </p>
               </div>

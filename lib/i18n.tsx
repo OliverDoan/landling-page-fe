@@ -56,7 +56,7 @@ const translations = {
     },
     // Banner
     banner: {
-      tag: "Về NewEra Inc.",
+      tag: "Điểm khác biệt",
       tagline: "Chúng tôi không chỉ tư vấn giải pháp.",
       title: "NEWERA INC. TẬP TRUNG VÀO XÂY DỰNG, VẬN HÀNH, VÀ NHÂN RỘNG HỆ THỐNG",
       description:
@@ -124,7 +124,7 @@ const translations = {
       },
     },
     banner: {
-      tag: "About NewEra Inc.",
+      tag: "What Sets Us Apart",
       tagline: "We go beyond consulting.",
       title: "NEWERA INC. FOCUSES ON BUILDING, OPERATING, AND SCALING SYSTEMS",
       description:

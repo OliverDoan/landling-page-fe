@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import React from "react";
 import styles from "./style/Header.module.css";
 import { useI18n } from "@/lib/i18n";
@@ -11,16 +10,17 @@ function Header() {
 
   return (
     <header className={styles.header}>
-      {/* Background Image */}
+      {/* Background Video */}
       <div className={styles.backgroundImage}>
-        <Image
-          src="/bg-header.webp"
-          alt="Header Background"
-          fill
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
           className={styles.bgImage}
-          priority
-          unoptimized
-        />
+        >
+          <source src="/video/video-header.mp4" type="video/mp4" />
+        </video>
       </div>
 
       {/* Content Container */}

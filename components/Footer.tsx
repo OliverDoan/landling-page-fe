@@ -10,10 +10,18 @@ export default function Footer() {
 
   return (
     <footer className={styles.footer}>
-      {/* Background Image */}
+      {/* Background Video */}
       <div className="absolute inset-0 -z-10">
         <div className="relative w-full h-full">
-          <Image src="/bg-footer.webp" alt="Footer Background" fill className="object-cover" priority unoptimized />
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover"
+          >
+            <source src="/video/video-footer.mp4" type="video/mp4" />
+          </video>
         </div>
       </div>
 
