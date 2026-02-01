@@ -24,7 +24,12 @@ export default function Navigation() {
     router.push(`?${params.toString()}`);
   };
 
-  const navItems = [t.nav.about, t.nav.ecosystem, t.nav.team, t.nav.contact];
+  const navItems = [
+    { id: "about-us", label: t.nav.about },
+    { id: "ecosystem", label: t.nav.ecosystem },
+    { id: "team", label: t.nav.team },
+    { id: "contact", label: t.nav.contact },
+  ];
 
   return (
     <motion.nav
@@ -58,25 +63,25 @@ export default function Navigation() {
           <div className="hidden lg:flex items-center gap-2 bg-[#8B9AD9] dark:bg-[#2D3A6E] rounded-2xl px-2 py-2 h-fit">
             {navItems.slice(0, 3).map((item, index) => (
               <motion.a
-                key={item}
-                href={`#${item.toLowerCase().replace(/\s+/g, "-")}`}
+                key={item.id}
+                href={`#${item.id}`}
                 className="text-sm font-medium text-white hover:opacity-80 transition-opacity px-2"
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
               >
-                {item}
+                {item.label}
               </motion.a>
             ))}
             {/* Contact button */}
             <motion.a
-              href="#lien-he"
+              href={`#${navItems[3].id}`}
               className="rounded-lg bg-[#2D48CC] px-4 py-2 text-sm font-medium text-white hover:bg-[#2539B3] transition-colors"
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.8 }}
             >
-              {navItems[3]}
+              {navItems[3].label}
             </motion.a>
 
             {/* Language Toggle */}
@@ -169,20 +174,20 @@ export default function Navigation() {
               <div className="flex flex-col gap-3">
                 {navItems.slice(0, 3).map((item, index) => (
                   <a
-                    key={item}
-                    href={`#${item.toLowerCase().replace(/\s+/g, "-")}`}
+                    key={item.id}
+                    href={`#${item.id}`}
                     className="text-sm font-medium text-white hover:opacity-80 transition-opacity py-2 px-3 rounded-lg hover:bg-white/10"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
-                    {item}
+                    {item.label}
                   </a>
                 ))}
                 <a
-                  href="#lien-he"
+                  href={`#${navItems[3].id}`}
                   className="rounded-lg bg-[#2D48CC] px-4 py-2 text-sm font-medium text-white hover:bg-[#2539B3] transition-colors text-center"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  {navItems[3]}
+                  {navItems[3].label}
                 </a>
               </div>
             </div>
