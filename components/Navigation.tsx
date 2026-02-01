@@ -163,41 +163,29 @@ export default function Navigation() {
         {/* Mobile Menu */}
         <AnimatePresence>
           {isMobileMenuOpen && (
-            <motion.div
+            <div
               className="lg:hidden mt-4 bg-[#8B9AD9] dark:bg-[#2D3A6E] rounded-2xl p-4"
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.3 }}
             >
               <div className="flex flex-col gap-3">
                 {navItems.slice(0, 3).map((item, index) => (
-                  <motion.a
+                  <a
                     key={item}
                     href={`#${item.toLowerCase().replace(/\s+/g, "-")}`}
                     className="text-sm font-medium text-white hover:opacity-80 transition-opacity py-2 px-3 rounded-lg hover:bg-white/10"
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -20 }}
-                    transition={{ duration: 0.3, delay: index * 0.1 }}
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     {item}
-                  </motion.a>
+                  </a>
                 ))}
-                <motion.a
+                <a
                   href="#lien-he"
                   className="rounded-lg bg-[#2D48CC] px-4 py-2 text-sm font-medium text-white hover:bg-[#2539B3] transition-colors text-center"
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -20 }}
-                  transition={{ duration: 0.3, delay: 0.3 }}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {navItems[3]}
-                </motion.a>
+                </a>
               </div>
-            </motion.div>
+            </div>
           )}
         </AnimatePresence>
       </div>
