@@ -7,6 +7,8 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import About from "@/components/About";
+import ScrollingSections from "@/components/scrolling-sections";
+import Banner from "@/components/Banner";
 
 const ENABLE_LOADING = process.env.NEXT_PUBLIC_ENABLE_LOADING === "true";
 
@@ -28,6 +30,8 @@ export default function Home() {
                 <Navigation />
                 <Header />
                 <About />
+                <Banner />
+                <ScrollingSections />
                 <Footer />
               </motion.div>
             )}
@@ -39,6 +43,8 @@ export default function Home() {
           <Navigation />
           <Header />
           <About />
+          <Banner />
+          <ScrollingSections />
           <Footer />
         </>
       )}
