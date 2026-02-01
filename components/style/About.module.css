@@ -292,7 +292,7 @@ opacity: 0.5;
   font-weight: 500;
   line-height: 1.5;
   margin: 0;
-
+  text-wrap: balance;
 
   color: #FDFDFD;
 
@@ -345,6 +345,7 @@ letter-spacing: 0.3px;
 
 .description {
     color: #060606;
+    text-wrap: balance;
 
     /* 3xl */
     font-size: 30px;

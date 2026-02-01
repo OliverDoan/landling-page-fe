@@ -5,6 +5,7 @@ font-size: 20px;
 font-style: normal;
 font-weight: 700;
 line-height: 28px; /* 125% */
+text-wrap: balance;
 }
 
 .footer {
